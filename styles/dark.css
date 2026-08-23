@@ -11,5 +11,8 @@
   --rec-display: block;
   --title-color: #db00ff;
   --title-decor-color: #000028;
-  --text-color: #ff0070;
+  --text-color: #f1b2ce;
+  --btn-color: #ff0070;
+  --section-title: #ff0070;
+  --hover-border-color: rgba(255, 0, 112, 0.4);
 }

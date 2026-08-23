@@ -1,7 +1,7 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  font-family: 'IBM Plex Mono' monospace;
+  font-family: 'IBM Plex Mono', monospace;
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -38,36 +38,31 @@
   text-transform: lowercase;
   border: none;
   background: transparent;
-  color: var(--text-color);
+  color: var(--btn-color);
   cursor: pointer;
+  padding: 1px 13px 1px 13px;
 }
 
 .header__theme-menu-button:hover {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 18px;
-  line-height: 18px;
-  font-weight: 400;
-  text-transform: lowercase;
-  border: 1px solid rgba(255, 0, 112, 0.4);
-  background: transparent;
-  color: var(--text-color);
-  padding: 4px 13px 4px 13px;
+ 
+  outline: 1px solid var(--hover-border-color);
 }
 
 .header__theme-menu-button:focus {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 18px;
-  line-height: 18px;
-  font-weight: 400;
-  text-transform: lowercase;
-  border-bottom: 1px solid rgba(255, 0, 112);
-  color: #ff0070;
+  outline: none;
+  outline-offset: 2px;
+  
 }
 
- .header__theme-menu-button_type_dark {
-  border: 1px solid #ff0070;
-  padding: 4px 13px 4px 13px;
- }
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid var(--hover-border-color);
+}
+
+.header__theme-menu-button_active {
+  pointer-events: none;
+  border: 1px solid var(--hover-border-color);
+}
+
 
 
 .header__rec {
@@ -136,7 +131,6 @@
   font-size: 18px;
   line-height: 23.4px;
   max-width: 364px;
-  align-self: start;
   font-family: 'IBM Plex Mono', monospace;
 }
 
@@ -152,7 +146,6 @@
 .section {
   padding: 10px;
   width: auto;
-  background-color: var(--bg-color);
 }
 
 .section__title {
@@ -160,7 +153,7 @@
   font-family: 'IBM Plex Mono', monospace;
   font-weight: 700;
   line-height: 23.4px;
-  color: var(--accent-color);
+  color: var(--section-title);
   margin-bottom: 20px;
 }
 
@@ -172,8 +165,8 @@
   margin-bottom: 20px;
 }
 
-.card {
-  margin-bottom: 20px;
+.card:last-child {
+  margin: 0;
 }
  
 .card__title {
@@ -192,9 +185,19 @@
   color: var(--text-color)
 }
 
- a {
-  text-shadow: 1px 1px var(--accent-color);
-  cursor: pointer;
+.text-link {
+    text-shadow: 1px 1px 0 var(--accent-color);
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.text-link:hover {
+    border-bottom: 1px solid var(--text-color);
+}
+
+.text-link:focus {
+    outline: 1px solid var(--text-color);
+    outline-offset: 2px;
 }
 
 .card__title a {
@@ -210,11 +213,6 @@
 .card__title a:focus-visible {
   outline: 1px solid var(--text-color);
   outline-offset: 2px;
-}
-
-.card__title_font_bold {
-  font-weight: 700;
-  margin-bottom: 20px;
 }
 
 .card__title_font_normal {
@@ -243,7 +241,6 @@
   padding: 10px;
   position: relative;
   width: 100%;
-  background-color: var(--bg-color);
 }
 
 .footer__title {
@@ -258,17 +255,14 @@
 
 @media(min-width: 768px) {
   .header {
-  height: 100vh;
   min-height: 1024px;
   padding: 20px;
   width: 768px;
   }
 
   .header__theme-menu {
-  justify-self: end;
   margin-top: 142px;
   margin-bottom: 174px;
-  padding: 10px;
   }
 
   .header__rec {
@@ -299,12 +293,11 @@
   }
 
   .section {   
-  padding: 30px 20px;
-  width: 768px;
-  height: auto;
-  background-color: var(--bg-color);
-  padding-top: 60px;
-}
+    padding: 30px 20px;
+    width: 768px;
+    height: auto;
+    padding-top: 60px;
+  }
 
   .section__title {
     width: 236px;
@@ -335,8 +328,7 @@
     gap: 20px;
   }
 
-  .gallery__image{
-    width: 100%;
+  .gallery__image {
     height: 100%;
     object-fit: cover;
     display: block;
@@ -374,7 +366,6 @@
 
 @media (min-width: 1024px) {
   .header {
-  height: 100vh;
   min-height: 768px;
   padding: 20px;
   width: 1024px;
@@ -436,6 +427,5 @@
 
   .footer {
     width: 1024px;
-    height: 768px;
   }
 }
