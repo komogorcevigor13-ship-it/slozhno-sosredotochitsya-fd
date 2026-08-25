@@ -10,11 +10,9 @@
 }
 
 .header {
-  height: 100vh;
-  min-height: 668px;
   width: 375px;
   display: grid; 
-  grid-template-rows: auto 1fr 1fr ;
+  grid-template-rows: auto 1fr auto ;
 }
 
 .header__theme-menu {
@@ -40,7 +38,7 @@
   background: transparent;
   color: var(--btn-color);
   cursor: pointer;
-  padding: 1px 13px 1px 13px;
+  padding: 4px 13px 4px 13px;
 }
 
 .header__theme-menu-button:hover {
@@ -48,14 +46,9 @@
   outline: 1px solid var(--hover-border-color);
 }
 
-.header__theme-menu-button:focus {
-  outline: none;
-  outline-offset: 2px;
-  
-}
 
 .header__theme-menu-button:focus-visible {
-  border-bottom: 1px solid var(--hover-border-color);
+  border-bottom: 1px solid var(--section-title);
 }
 
 .header__theme-menu-button_active {
@@ -126,12 +119,19 @@
 
 
 .header__description {
+  width: 364px;
   align-self: center;
   font-weight: 700;
   font-size: 18px;
   line-height: 23.4px;
   max-width: 364px;
   font-family: 'IBM Plex Mono', monospace;
+  margin-top: 55px;
+  
+}
+
+.header__description-block {
+  margin-bottom: 66px;
 }
 
 .title-decor {
@@ -144,9 +144,23 @@
 }
 
 .section {
+  background-color: var(--bg-color);
   padding: 10px;
-  width: auto;
+  width: 375px;
 }
+
+ .section__why {
+  padding-top: 40px;
+  gap: 20px;
+ }
+
+ .section__what {
+  padding-top: 50px;
+ }
+
+  .section__how {
+  padding-top: 50px;
+  }
 
 .section__title {
   font-size: 18px;
@@ -175,6 +189,7 @@
   font-weight: 700;
   line-height: 23.4px;
   margin-bottom: 10px;
+  margin-top: 20px
 }
 
 .card__text {
@@ -200,21 +215,6 @@
     outline-offset: 2px;
 }
 
-.card__title a {
-  text-shadow: 2px 2px 0 var(--accent-color);
-  color: var(--title-decor-color);
-  text-decoration: none;
-}
-
-.card__title a:hover {
-  border-bottom: 1px solid var(--text-color);
-}
-
-.card__title a:focus-visible {
-  outline: 1px solid var(--text-color);
-  outline-offset: 2px;
-}
-
 .card__title_font_normal {
   font-weight: 400;
 }
@@ -236,11 +236,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
   min-height: 668px;
-  padding: 10px;
   position: relative;
-  width: 100%;
+  width: 375px;
+  background-color: var(--bg-color);
+  padding: 10px;
 }
 
 .footer__title {
@@ -248,7 +248,7 @@
   font-weight: 700;
   font-family: 'IBM Plex Mono', monospace;
   color: var(--title-color);
-  text-shadow: 4px 4px 0 var(--accent-color);
+  text-shadow: 2px 2px 0 var(--accent-color);
   line-height: 83%;
   text-align: center;
 }
@@ -256,30 +256,28 @@
 @media(min-width: 768px) {
   .header {
   min-height: 1024px;
-  padding: 20px;
   width: 768px;
   }
 
   .header__theme-menu {
-  margin-top: 142px;
+  margin-top: 192px;
   margin-bottom: 174px;
-  }
+  } 
 
   .header__rec {
   top: 20px;
   right: 30px;
-  
-}
-
-  .header__title {
-    align-self: start;
-    text-align: start;
-    padding: 0;
   }
 
-  .header__description-block {
+  .header__description {
+    margin-top: 162px;
+    margin-bottom: 138px;
     justify-self: end;
-    width: 364px;
+  }
+
+  .header__title {
+    text-align: start;
+    padding: 0;
   }
 
    .decorated-zone::before {
@@ -292,11 +290,10 @@
     right: 20px;
   }
 
-  .section {   
-    padding: 30px 20px;
+  .section { 
+    padding: 20px;
     width: 768px;
     height: auto;
-    padding-top: 60px;
   }
 
   .section__title {
@@ -313,8 +310,13 @@
   }
 
   .section__how {
+    padding-top: 80px;
     display: grid;
     grid-template-columns: 1fr 1fr;
+  }
+
+  .section__gallery {
+    padding-top: 80px;
   }
 
   .block {
@@ -330,8 +332,6 @@
 
   .gallery__image {
     height: 100%;
-    object-fit: cover;
-    display: block;
   }
 
   .gallery__image:nth-child(1) {
@@ -362,20 +362,26 @@
   .footer {
     width: 768px;
   }
+
 }
 
 @media (min-width: 1024px) {
   .header {
   min-height: 768px;
-  padding: 20px;
   width: 1024px;
   }
 
   .header__theme-menu {
   justify-self: center;
   margin-bottom: 273px;
-  padding: 10px;
   margin-top: 0;
+  }
+
+    .header__description {
+    justify-self: end;
+    margin-top: 114px;
+    margin-bottom: 134px;
+    width: 491px;
   }
 
   .header__theme-menu-list {
@@ -384,16 +390,8 @@
 }
 
    .header__title {
-    align-self: start;
-    text-align: start;
+    font-size: 157px;
     margin-left: 0;
-    padding: 0;
-  }
-
-  .header__description-block {
-    justify-self: end;
-    width: 491px;
-    height: 71px;
   }
 
   .section {
@@ -405,13 +403,8 @@
     width: 315px;
   }
 
-  .section__what {
-    padding-top: 80px;  
-  }
-
   .block-why {
     width: 984px;
-    height: 431px;
     display: flex;
     gap: 20px;
   }
