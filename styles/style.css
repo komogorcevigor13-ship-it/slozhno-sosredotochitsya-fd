@@ -62,7 +62,6 @@
   grid-template-columns: repeat(2, auto);
   gap: 10px;
   block-size: 25px;
-  justify-self: end;
   color: var(--accent-color);
   font-size: var(--regular-font-size);
   text-transform: uppercase;
