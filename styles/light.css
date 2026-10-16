@@ -4,18 +4,24 @@
   переключая тему
 */
 
-.page.theme_light {
+.theme-light {
   --background-image: url("../images/cover-image-light.png");
-  --accent-color: #ff8dcb;
-  --accent-color-opacity: #32312d66;
+  --accent-color: #353430;
+  --header-title-color: #ffc2e6;
+  --text-shadow: #ff8dcb;
+  --background-title: #ff8bcb;
+  --color-title: #000028;
   --text-color: #353430;
-  --decoration-color: var(--text-color);
-  --background-color: #fff1f7;
-  --header1-color: #ffc2e6;
-  --header2-color: var(--text-color);
-  --header3-color: var(--text-color);
-  --is-light: hidden;
+  --border-button: rgba(53, 52, 48, 0.4);
+  --link-button: #353430;
 
+  .header__decoration-dark {
+    visibility: hidden;
+  }
+
+  .header__decoration-dark::after {
+    visibility: hidden;
+  }
   /* сохраните этот селектор в приведённом виде.
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
@@ -25,14 +31,20 @@
 @media (prefers-color-scheme: light) {
   :root {
     --background-image: url("../images/cover-image-light.png");
-    --accent-color: #ff8dcb;
-    --accent-color-opacity: #32312d66;
+    --accent-color: #353430;
+    --header-title-color: #ffc2e6;
+    --text-shadow: #ff8dcb;
+    --background-title: #ff8bcb;
+    --color-title: #000028;
     --text-color: #353430;
-    --decoration-color: var(--text-color);
-    --background-color: #fff1f7;
-    --header1-color: #ffc2e6;
-    --header2-color: var(--text-color);
-    --header3-color: var(--text-color);
-    --is-light: hidden;
+    --link-button: #353430;
+    --border-button: rgba(53, 52, 48, 0.4);
+  }
+  .header__decoration-dark {
+    visibility: hidden;
+  }
+
+  .header__decoration-dark::after {
+    visibility: hidden;
   }
 }

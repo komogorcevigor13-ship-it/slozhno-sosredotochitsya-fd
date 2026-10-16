@@ -4,17 +4,17 @@
   переключая тему
 */
 
-.page.theme_dark {
+.theme-dark {
   --background-image: url("../images/cover-image-dark.png");
   --accent-color: #ff0070;
-  --accent-color-opacity: #ff007066;
+  --header-title-color: #db00ff;
+  --text-shadow: #ff0070;
+  --background-title: #ff0070;
+  --color-title: #000028;
   --text-color: #f1b2ce;
-  --decoration-color: var(--accent-color);
-  --background-color: #000028;
-  --header1-color: #db00ff;
-  --header2-color: var(--accent-color);
-  --header3-color: var(--background-color);
-  --is-light: visible;
+  --border-button: rgba(255, 0, 112, 0.4);
+  --link-button: #f1b2ce;
+  --font-family: "IBM Plex mono", monospace;
 
   /* сохраните этот селектор в приведённом виде.
     Так стили написанные ниже будут иметь больший вес,
