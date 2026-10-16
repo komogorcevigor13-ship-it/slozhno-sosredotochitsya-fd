@@ -7,6 +7,7 @@
 .theme-dark {
   --background-image: url("../images/cover-image-dark.png");
   --accent-color: #ff0070;
+  --background-color: #000028;
   --header-title-color: #db00ff;
   --text-shadow: #ff0070;
   --background-title: #ff0070;
