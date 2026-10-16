@@ -83,7 +83,7 @@
   text-transform: lowercase;
   font-size: 18px;
   padding-inline: 13px;
-  padding-top: 0;
+  padding: 4px 13px;
 }
 
 .header__theme-menu-button_active {
